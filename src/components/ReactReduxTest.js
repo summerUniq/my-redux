@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
+import {add, minus, asyncAdd} from '../store/actions'
 
 class ReactReduxTest extends React.Component {
     constructor(props) {
@@ -16,22 +17,25 @@ class ReactReduxTest extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        counter: state
-    }
-}
+const mapStateToProps = (state) => ({
+    counter: state
+})
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        add: () => dispatch({type: "add"}),
-        minus: () => dispatch({type: 'minus'}),
-        asyncAdd: () => dispatch(() => {
-            setTimeout(() => {
-                dispatch({type: 'add'})
-            }, 1000)
-        })
-    }
-}
- 
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         add: () => dispatch({type: "add"}),
+//         minus: () => dispatch({type: 'minus'}),
+//         asyncAdd: () => dispatch(() => {
+//             setTimeout(() => {
+//                 dispatch({type: 'add'})
+//             }, 1000)
+//         })
+//     }
+// }
+ const mapDispatchToProps = {
+    add,
+    minus,
+    asyncAdd,
+ }
+
 export default connect(mapStateToProps, mapDispatchToProps)(ReactReduxTest);
