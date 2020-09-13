@@ -6,9 +6,9 @@ class ReduxTest extends Component {
         super(props);
         this.state = {  }
     }
-    componentDidMount(){
-        store.subscribe(() => this.forceUpdate())
-    }
+    // componentDidMount(){
+    //     store.subscribe(() => this.forceUpdate())
+    // }
     render() { 
         return ( 
         <div>
