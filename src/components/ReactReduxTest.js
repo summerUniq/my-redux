@@ -11,6 +11,7 @@ class ReactReduxTest extends React.Component {
             <button onClick={this.props.add}>+</button>
         <span>还剩次数{this.props.counter}</span>
         <button onClick = {this.props.minus}>-</button>
+        <button onClick = {this.props.asyncAdd}>async + </button>
         </div>);
     }
 }
@@ -24,7 +25,12 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         add: () => dispatch({type: "add"}),
-        minus: () => dispatch({type: 'minus'})
+        minus: () => dispatch({type: 'minus'}),
+        asyncAdd: () => dispatch(() => {
+            setTimeout(() => {
+                dispatch({type: 'add'})
+            }, 1000)
+        })
     }
 }
  
