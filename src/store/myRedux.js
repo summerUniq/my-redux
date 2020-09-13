@@ -1,4 +1,3 @@
-import { render } from "react-dom"
 
 /**
  * 自己实现redux
@@ -12,7 +11,7 @@ import { render } from "react-dom"
 
 export function createStore(reducer) {
     // 保存状态
-    let currentState = null
+    let currentState = undefined // undefined表示定义了变量没有赋值， null表示定义了变量值为null, 设及到初始化值的问题
     // 回调函数
     let currentListeners = []
 

@@ -1,11 +1,10 @@
 
-const counterReducer = (state = 1, action) => {
-    console.log(action);
+const counterReducer = (state = 0, action) => {
     switch (action.type) {
         case 'add':
-            return state + action.payload;
+            return state + 1;
         case 'minus':
-            return state - action.payload;
+            return state - 1;
         default:
             return state
     }
