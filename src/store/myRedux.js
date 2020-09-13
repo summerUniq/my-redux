@@ -59,7 +59,7 @@ export function applyMiddleware(...middlewares) {
             dispatch: (...arugs) => dispatch(...arugs),
             getState: store.getState
         }
-        // 是中间件可以获取状态值，派发action
+        // 是中间件可以获取状态值，派发action  
         const chunks = middlewares.map(middleware => middleware(midApi))
         // 强化dispath, 顺序执行中间件
         dispatch = compose(...chunks)(store.dispatch)

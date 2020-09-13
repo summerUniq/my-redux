@@ -1,6 +1,5 @@
 import { createStore, applyMiddleware} from './myRedux'
-import thunk from 'redux-thunk'
-import logger from 'redux-logger'
+import {logger, thunk} from './myMiddleware'
 import counterReducer from './counterReducer'
 
 const store = createStore(counterReducer, applyMiddleware(logger, thunk))
