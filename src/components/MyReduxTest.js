@@ -14,7 +14,12 @@ class MyReduxTest extends Component {
         <div>
             <button onClick={() => store.dispatch({type: 'add'})}>+</button>
             <span>按钮数据： {store.getState()}</span>
-            <button onClick={() => {store.dispatch({type: 'minus'})}}>-</button>
+            <button onClick={() => store.dispatch({type: 'minus'})}>-</button>
+            <button onClick={() => store.dispatch(() => {
+                setTimeout(() => {
+                    store.dispatch({type: 'add'})
+                }, 1000)
+            })}>async ++</button>
         </div>
          );
     }
