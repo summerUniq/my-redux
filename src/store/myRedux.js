@@ -56,7 +56,7 @@ export function applyMiddleware(...middlewares) {
         let dispatch = store.dispatch
         // 中间件的api
         const midApi = {
-            dispatch: (...args) => dispatch(...args),
+            dispatch: (...arugs) => dispatch(...arugs),
             getState: store.getState
         }
         // 是中间件可以获取状态值，派发action
